@@ -65,7 +65,7 @@ echo "$varpw" | yay -S --noconfirm --needed teams
 echo "$varpw" | yay -S --noconfirm --needed outlook-for-linux-bin
 echo "$varpw" | yay -S --noconfirm --needed oracle-sqldeveloper
 echo "$varpw" | yay -S --noconfirm --needed icedtea-web
-
+echo "$varpw" | yay -S --noconfirm --needed bibata-cursor-theme-bin
 
 
 #installs neovim plugins
