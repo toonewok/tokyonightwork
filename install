@@ -4,7 +4,7 @@
 #
 #
 echo Please enter your AIX username
-read -s aixuser
+read aixuser
 echo Please enter your root/sudo password
 read -s varpw
 #echo \(debug\)Password entered: $varpw
