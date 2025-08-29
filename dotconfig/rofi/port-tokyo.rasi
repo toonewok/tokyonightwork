@@ -3,7 +3,7 @@ Color file
 ****/
 
 * {
-	font: "Cousine Nerd Font 18";
+	font: "JetBrainsMonoNl NF 18";
 	fg0: #787e96;
 	bg0trans:#1a1b26CC ;
 	bg0: #1a1b26;
