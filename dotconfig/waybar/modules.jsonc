@@ -1,0 +1,142 @@
+{
+
+"hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"active":"<span color='#73daca'></span>",
+			"default":"<span color='#414868'></span>",
+			"empty":"<span color='#414868'></span>"
+			},
+		"persistent-workspaces": {
+			"Virtual-1": [1, 2, 3, 4, 5]
+			}
+		},
+
+	"custom/trayic":
+	{
+		"format": "",
+		"tooltip":false
+
+	},
+	"tray":
+	{
+		"icon-size": 18,
+		"spacing": 10
+	},
+
+	"custom/rofisearch":
+	{
+		"format": "",
+		"tooltip":false,
+		"on-click":"rofi -disable-history -show drun"
+	},
+	"custom/spotifylogo":
+	{
+	//	"format": "󰓇",
+		"format": "<span color='#c0caf5'>󰝚</span>",
+		"tooltip":false
+	},
+	"custom/pp":
+	{
+		"format": "<span color='#f7768e'>󰐊</span>",
+		"tooltip":false,
+		"on-click": "playerctl play-pause"
+	
+	},
+	"custom/prev":
+	{
+		"format": "<span color='#7dcfff'>󰒮</span>",
+		"tooltip":false,
+		"on-click": "playerctl previous"
+	},
+	"custom/next":
+	{
+		"format": "<span color='#73daca'>󰒭</span>",
+		"tooltip":false,
+		"on-click": "playerctl next"
+
+	},
+	"custom/spotify":
+	{
+		"exec":"~/.config/waybar/scripts/mediaplayer.py --player spotify",
+		"format":"{}",
+		"return-type":"json",
+		"on-click":"spotify-launcher"
+	},
+	"custom/power":
+	{
+		"format": "<span color='#73daca'>⏻</span>",
+		"tooltip":false,
+		"on-click": "shutdown now"
+	},
+	"custom/quit":
+	{
+		"format": "<span color='#73daca'>󰗽</span>",
+		"tooltip": false,
+		"on-click": "hyprctl dispatch exit"	
+	},
+	"custom/lock": 
+	{
+		"format": "<span color='#ff768e'></span>",
+		"on-click": "hyprlock",
+		"tooltip": false
+	},
+	"custom/reboot":
+	{
+		"format": "<span color='#7dcfff'></span>",
+		"tooltip": false,
+		"on-click": "reboot"
+	},
+	
+	"pulseaudio":
+	{
+		"format": "{icon}<span color='#73daca'> {volume}</span>",
+		"format-muted": "<span color='#F7DA63'>MUTE</span>",
+		"on-click": "pavucontrol",
+		"on-click-right":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": 
+		{	
+			"default": ["",""," "] 
+		}
+	},
+
+	"pulseaudio#alt":
+	{
+		"format": "VOL<span color='#73daca'> {volume}</span>",
+		"format-muted": "<span color='#F7DA63'>MUTE</span>",
+		"on-click": "pavucontrol",
+		"on-click-right":"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+
+	},
+
+	"custom/sep":
+	{
+		"format":"|",
+		"interval":"once",
+		"tooltip": false
+	},
+	"network":
+	{	
+
+		"format-wifi": "",
+		"format-ethernet": "󰈀",
+		"format-disconnected": "<span color='#F7DA63'>  NO CONNECTION</span>",
+		"tooltip-format": "{ipaddr}" 
+	},
+	"battery": 
+	{
+		"bat": "BAT0",
+		"interval": 60,
+		"format": "BAT {capacity}%"
+	},
+	"clock#long":
+	{
+		"format":"<span color ='#73daca'> {:%B %d, %Y - %I:%M} </span>",
+		"tooltip-format":"<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
+	},
+	"clock":
+	{
+		"format":"{:%I:%M}",
+		"tooltip-format":"<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
+	}
+}

@@ -1,0 +1,14 @@
+configuration {
+	modi: "drun,filebrowser,run,window";
+	display-drun: " ";
+	display-run: " ";
+	display-filebrowser: " ";
+	display-window: " ";
+	drun-display-format: "{name}";
+	show-icons: true;
+
+
+
+}
+
+@theme "~/.config/rofi/port-tokyo.rasi"

@@ -1,0 +1,5 @@
+
+###this is what executes your Hyprland, do not remove :) 
+if [[ "$(tty)" == "/dev/tty1" ]]; then
+    exec Hyprland &>/dev/null
+fi

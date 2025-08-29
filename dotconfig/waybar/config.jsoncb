@@ -1,0 +1,82 @@
+[
+// Feb 19, 2025
+// Redoing rice again lmao
+
+//--------------------------------------------
+// main monitor bar options
+//--------------------------------------------
+
+{
+	"include": "~/.config/waybar/modules.jsonc",
+	"output":"DP-3",
+	//"layer": "top",
+	"position": "top",
+	"height": 48,
+	"spacing": 0,
+	"margin-top": 15,
+	"margin-left": 40,
+	"margin-right":40,
+	"margin-bottom": 0,
+
+//--------------------------------------------
+// module layout
+//--------------------------------------------
+	"modules-left":
+	[
+		"custom/rofisearch",
+		"group/media"
+	],
+	"modules-center":
+	[
+		"clock#long"
+	],
+	"modules-right":
+	[	
+		"group/misc",
+		"network",
+		"group/pwr"
+	],
+	"group/media":
+	{
+		"orientation":"horizontal",
+		"drawer": {
+		"transition-duration": 500,
+		"children-class": "not-power",
+		"transition-left-to-right": false
+		},
+		
+		"modules":[
+			"custom/spotifylogo",
+			"custom/pp",
+			"custom/prev",
+			"custom/next",
+			"custom/spotify"
+		]
+	},
+
+	"group/misc":
+	{
+		"orientation":"horizontal",
+		"drawer":{
+				"transition-duration": 500,
+				"children-class": "not-power",
+				"transition-left-to-right": false
+			},
+			"modules":["custom/trayic","cpu", "memory", "disk", "disk#nvme", "disk#ssd","pulseaudio", "tray" ]
+	},
+
+	"group/pwr":
+	{
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "not-power",
+			"transition-left-to-right": false
+			  },
+	"modules":["custom/power","custom/reboot"]
+	}
+
+
+
+}
+]

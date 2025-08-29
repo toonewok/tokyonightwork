@@ -1,0 +1,22 @@
+/****
+Color file
+****/
+
+* {
+	font: "Cousine Nerd Font 18";
+	fg0: #787e96;
+	bg0trans:#1a1b26CC ;
+	bg0: #1a1b26;
+	bg1: #414868;
+	sel: #7dcfff;
+	act: #bb9af7;
+	accent: #73daca;
+	bg-img: url("~/.config/rofi/wall.jpg", height);
+
+	debug: #F49999;
+
+
+
+
+}
+@import "list.rasi"

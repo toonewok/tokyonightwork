@@ -1,0 +1,169 @@
+/**
+ * rofi -dump-theme output.
+ * Rofi version: 1.7.8+wayland1
+ **/
+* {
+ 
+}
+
+window {
+	transparency: "real";
+	location: center;
+	anchor: center;
+	fullscreen: false;
+	width: 400px;
+	//height: 200px;
+	x-offset: 0px;
+	y-offset: 0px;
+	enabled: true;
+	border-radius: 10px;
+	border: 2px;
+	padding: 10px;
+	border-color: @sel;
+	cursor: "default";
+	background-color: @bg0trans;
+}
+
+mainbox {
+	enabled: true;
+	spacing: 0px;
+	background-color: transparent;
+	orientation: vertical;
+	children:[ "inputbar","listbox", "mode-switcher"];
+
+}
+
+inputbar {
+	enabled: true;
+	spacing: 10px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: @bg1;
+	text-color: @fg0;
+	children: [ "entry" ];
+}
+entry {
+	enabled: true;
+	background-color: inherit;
+	text-color: inherit;
+	cursor: text;
+	placeholder: "";
+	placeholder-color: inherit;
+}
+listbox {
+	spacing: 20px;
+	padding: 20px;
+	background-color: transparent;
+	orientation: vertical;
+	children: [ "message", "listview" ];
+}
+
+
+
+
+
+/*****----- Mode Switcher -----*****/
+mode-switcher{
+    enabled:                     true;
+    spacing:                     20px;
+    background-color:            transparent;
+    text-color:                  @fg0;
+}
+button {
+    padding:                     15px;
+    border-radius:               10px;
+    background-color:            @bg0trans;
+    text-color:                  inherit;
+    cursor:                      pointer;
+}
+button selected {
+    background-color:            @sel;
+    text-color:                  @fg0;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px;
+    background-color:            transparent;
+    text-color:                  @fg0;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     0px;
+    padding:                     8px;
+    border-radius:               10px;
+    background-color:            transparent;
+    text-color:                  @fg0;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+element normal.urgent {
+    background-color:            @accent;
+    text-color:                  @fg0;
+}
+element normal.active {
+    background-color:            @accent;
+    text-color:                  @fg0;
+}
+element selected.normal {
+    background-color:            @sel;
+    text-color:                  @fg0;
+}
+element selected.urgent {
+    background-color:            @accent;
+    text-color:                  @fg0;
+}
+element selected.active {
+    background-color:            @sel;
+    text-color:                  @fg0;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        32px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Message -----*****/
+message {
+    background-color:            transparent;
+}
+textbox {
+    padding:                     15px;
+    border-radius:               10px;
+    background-color:            @bg1;
+    text-color:                  @fg0;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+error-message {
+    padding:                     15px;
+    border-radius:               20px;
+    background-color:            @bg0;
+    text-color:                  @fg0;
+}
+//debug#FF9999

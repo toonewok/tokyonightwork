@@ -1,0 +1,81 @@
+// -*- mode: jsonc -*-
+[
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 26, // Waybar height (to be removed for auto height)
+    "output": "DP-2",
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+	"custom/spotify"
+    ],
+    "modules-center": [
+      "clock" 
+    ],
+    "modules-right": [
+               "custom/time"
+    ],
+
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+	"format":"{:%B %d, %Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
+      },
+    "custom/time": {
+	     "tooltip": false,
+	    "format":"{} <span color='#689d6a'> </span>",
+	    "exec":"date +'%I:%M'",
+	    "interval":1
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+
+    "custom/spotify": {
+	"exec": "/home/bailey/.config/waybar/scripts/mediaplayer.py --player spotify",
+	"format": "<span color='#689d6a'> 󰝚</span> {}",
+	"return-type": "json"
+    }
+    
+},
+{
+	"height": 26,
+	"output": "DP-3",
+	"spacing": 4,
+	"modules-center" : [
+		"tray"
+	],
+	"tray": {
+        // "icon-size": 21,
+        "spacing": 10
+
+	
+}
+]

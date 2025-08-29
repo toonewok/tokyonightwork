@@ -1,0 +1,93 @@
+#!/bin/bash
+#this is a first attempt at creating a simple install script
+#	"install" is probably a bit generous, this will be ran after an arch install to setup a basic rice(hopefully)
+#
+#
+echo Please enter your AIX username
+read -s aixuser
+echo Please enter your root/sudo password
+read -s varpw
+#echo \(debug\)Password entered: $varpw
+
+echo "$varpw" | sudo -S pacman -S --noconfirm --needed fastfetch hyprlock hyprpaper nvim rofi nodejs waybar zsh nwg-look firefox nemo pulseaudio pavucontrol ttf-jetbrains-mono-nerd ttf-tinos-nerd kitty python-gobject zip unzip globalprotect-openconnect xclip
+
+RUNZSH=no CHSH=no KEEPZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "$varpw" | sudo -S chsh -s "$(which zsh)" "$USER"
+cp ewk.zsh-theme ~/.oh-my-zsh/themes
+cp .zshrc ~/
+mkdir -p ~/Pictures
+mkdir -p ~/.icons
+mkdir -p ~/.themes
+
+#this will attempt to determine the display being used and set it accordingly
+#in hyprland.conf and hyprpaper.conf
+monname=$(hyprctl monitors all | sed '1!d' | grep Monitor | cut -d ' ' -f 2)
+monres=$(hyprctl monitors all | sed '2!d' | cut -d ' ' -f 1)
+monres=$(echo "$monres"| awk '{print $1}')
+echo "DEBUG: monname ='$monname' monres='$monres'"
+
+sed -i -e "s|Virtual-1|$monname|g" dotconfig/hypr/hyprpaper.conf
+sed -i -e "s|Virtual-1|$monname|g" dotconfig/waybar/config.jsonc
+sed -i -e "s|Virtual-1|$monname|g" dotconfig/waybar/modules.jsonc
+sed -i -e "s|Virtual-1|$monname|g" dotconfig/hypr/hyprland.conf
+sed -i -e "s|1920x1080|$monres|g" dotconfig/hypr/hyprland.conf
+sed -i -e "s|<user>|$aixuser|g" .zshrc
+sed -i -e "s|<user>|$USER|g" hyprlockgetty
+
+
+
+tar -xzf doticons.tgz
+tar -xzf dotthemes.tgz
+tar -xzf Pictures.tgz
+
+#read -p "DEBUG PAUSE...GO VERIFY TAR BALLS GOT EXTRACTED....press key to continue" -n1 -s
+
+
+zshtext=$(cat hyprlockzsh)
+gettytext=$(cat hyprlockgetty)
+
+
+
+cp -r dotconfig/* ~/.config/
+cp -r doticons/* ~/.icons/
+cp -r dotthemes/* ~/.themes/
+cp -r Pictures/* ~/Pictures
+
+#attempting to setup YAY
+cd ~/
+git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -s --noconfirm && echo "$varpw" | sudo -S pacman -U *.pkg.tar.zst --noconfirm
+
+cd ~/
+rm -rf ~/yay-bin
+
+echo "$varpw" | yay -S --noconfirm --needed teams
+echo "$varpw" | yay -S --noconfirm --needed outlook-for-linux-bin
+echo "$varpw" | yay -S --noconfirm --needed oracle-sqldeveloper
+echo "$varpw" | yay -S --noconfirm --needed icedtea-web
+
+
+
+#installs neovim plugins
+nvim +'PlugInstall --sync' +qa
+
+#sets up sdkman
+curl -s "https://get.sdkman.io" | bash
+source "/home/$USER/.sdkman/bin/sdkman-init.sh"
+sdk install java 8.0.462-amzn
+sdk use java 8.0.462-amzn
+
+
+	echo "$varpw" | sudo -S systemctl enable getty@tty1
+	echo "$varpw" | sudo -S mkdir -p /etc/systemd/system/getty@tty1.service.d
+	echo "$varpw" | sudo touch /etc/systemd/system/getty@tty1.service.d/override.conf
+	echo "$varpw" | sudo -S tee /etc/systemd/system/getty@tty1.service.d/override.conf >/dev/null <<< "$gettytext"
+	echo "$zshtext" >> .zshrc
+	echo "deleting sddm vim and dolphin"
+	echo "$varpw" | sudo -S pacman -R sddm vim dolphin --noconfirm
+	rm -rf ~/tokyonightwork
+	echo "done...system rebooting in 5 seconds"
+	sleep 5
+	echo "$varpw" | sudo -S reboot
+
+
