@@ -1,29 +1,56 @@
 [
+// July 30, 2025
+// setup for 'townbreeze'
+
+//--------------------------------------------
+// main monitor bar options
+//--------------------------------------------
+
 {
 	"include": "~/.config/waybar/modules.jsonc",
-//bar options
-	"output":"Virtual-1",
-	"position":"top",
-	//"margin-top": 10,
-//	"margin-left": 5,
-//	"margin-right": 5,
-//module layout
+	"output":"eDP-1",
+	//"layer": "top",
+	"position": "top",
+	"height": 34,
+	"spacing": 0,
+	"margin-top": 1,
+	"margin-left": 5,
+	"margin-right":5,
+	"margin-bottom": 0,
+
+//--------------------------------------------
+// module layout
+//--------------------------------------------
 	"modules-left":
-	[		
-		"custom/rofisearch"
+	[
+		"custom/rofisearch",
+		//"group/media",
+		"group/group-soft",
+	//	"custom/filebrowser",
+	//	"custom/firefox",
+		"hyprland/window"
 	],
 	"modules-center":
 	[
 		"clock#long"
 	],
 	"modules-right":
-	[
-		"group/misc",
-	//	"group/sys",
-		"network",
+	[	"group/misc",
+		"battery",
 		"pulseaudio",
-		"group/pwr"
+		"network",
+		//"clock",
+		"group/group-pwr"
 	],
+	"group/group-soft":
+	{
+		"orientation":"horizontal",
+		"modules":[
+			"custom/filebrowser",
+			"custom/firefox",
+			"custom/hyprhelp"
+		]
+	},
 	"group/media":
 	{
 		"orientation":"horizontal",
@@ -42,24 +69,9 @@
 		]
 	},
 
-	"group/sys":
-	{
-		"orientation":"horizontal",
-		"modules":[
-			//	"tray",
-			//	"custom/sep",
-			//	"battery",
-				"custom/sep",
-				"pulseaudio#alt",
-				"custom/sep",
-				"network",
-				"custom/sep",
-				"clock",
-				"custom/shutdown"
-			]
-	},
 
-	"group/pwr":
+
+	"group/group-pwr":
 	{
 		"orientation": "inherit",
 		"drawer": {
@@ -80,6 +92,8 @@
 			},
 			"modules":["custom/trayic","tray"]
 	}
-	
+
+
+
 }
 ]

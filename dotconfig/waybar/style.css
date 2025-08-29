@@ -1,136 +1,102 @@
 * {
-font-family: JetBrainsMonoNl NF;
-font-size: 24px;
+	
+	font-family: "JetBrainsMonoNl NF";
+	border: none;
+	border-radius: 0px;
+}
+
+tooltip {
+	font-family: "JetBrainsMonoNl NF";
+	border-radius: 15px;
+	background: transparent;
 }
 
 window#waybar{
+
+	background: transparent;
+	transition-property: background-color;
+	transition-duration: .5s;
+}
+
+
+
+
+#window {
+	color: #a9b1d6;
+	background: transparent;
+	margin: 2px 3px 3px 3px;
+	padding: 0px 10px;
+	border-radius: 15px;
+	font-weight: normal;
+	font-style: normal;
+	opacity: 0.8;
+	font-size: 16px;
+
+}
+
+window#waybar.empty #window {
 	background-color:transparent;
-	
-		
 }
 
-#custom-pp{
-font-size: 28px;
-padding: 0 5px 0 10px;
+#clock,
+#network,
+#pulseaudio,
+#battery {
+	color: #a9b1d6;
+	background: transparent;
+	margin: 2px 3px 3px 3px;
+	padding: 0px 10px;
+	border-radius: 15px;
+	font-weight: normal;
+	font-style: normal;
+	opacity: 0.8;
+	font-size: 20px;	
 }
-
-#custom-prev{
-font-size: 24px;
-padding: 1px 5px 0 5px;
-}
-
-#custom-next{
-font-size: 24px;
-padding: 1px 5px 0 5px;
-}
-
-#custom-spotifylogo{
-font-size: 24px;
-padding: 0px 5px 0px 10px;
-margin-right: 10px;
-}
-
-#custom-rofisearch{
-font-size: 24px;
-padding: 0px 13px 0px 5px;
-}
-
-#custom-spotify{
-color:#c0caf5;
-padding: 0 10px 0 10px;
-}
-
-#custom-power{
-padding: 0 13px 0 10px;
-}
-
-
-#custom-quit{
-padding: 0 13px 0 10px;
-}
-
-#custom-lock{
-padding: 0 13px 0 10px;
-}
-
-#custom-reboot{
-padding: 0 13px 0 10px;
-}
-
-#workspaces{
-margin-right: 10px;
-}
-#workspaces button{
-	font-family: Tinos Nerd Font;
-	/*padding: 0px 3px 0px 3px;*/
-}
-#workspaces button:hover{
-
-}
-
-
-
-#custom-sep{
-	margin-top: 2px;
-	color: #ff768e;
-	padding: 0px 2px 0px 2px;
-}
-
-#custom-trayic{
-	margin-top: 2px;
-	padding-left: 4px;
-
-}
-
-#tray{
-	margin-top: 2px;
-	margin-left: 4px;
-	margin-right: 4px;
-}
-
-#network{
-	margin-top: 2px;	
-	margin-right: 14px;
-}
-
 #clock{
-	margin-top: 2px;
-}
-
-#pulseaudio{
-	padding-left: 4px;
-	margin-top: 2px;
-}
-
-.modules-left{
-	font-family: JetBrainsMonoNl NF;
-	color: #73daca;
-	/*background-color: #1d202e;
-	opacity: 0.7;
-	border-radius: 8px;
-	border: 2px solid #73daca;*/
-	
-}
-
-.modules-center{
-	
-	color: #c0caf5;
-	/*background-color: #1d202e;
-	opacity: 0.7;
-	border-radius: 8px;
-	border: 2px solid #73daca;*/
-	
-}
-
-.modules-right{
-	font-family: JetBrainsMonoNl NF;
-	color: #c0caf5;
-/*	background-color: #1d202e;
-	opacity: 0.7;
-	
-	border-radius: 8px;
-	border: 2px solid #73daca;*/
-	
+	font-size: 20px;
 }
 
 
+
+#group-pwr {
+	font-size: 24px;
+	margin: 2px 10px 3px 10px;
+	padding: 0px 10px;
+	background: transparent;
+	border-radius: 15px;
+	font-weight: bold;
+	font-style: normal;
+	opacity: 0.8;
+}
+#custom-power,
+#custom-lock,
+#custom-reboot {
+	margin: 0px 7px;
+}
+#group-soft {
+	background: transparent;
+	margin: 2px 3px 3px 3px;
+	padding: 0px 10px;
+	border-radius: 15px;
+	font-weight: normal;
+	font-style: normal;
+	opacity: 0.8;
+	font-size: 24px;
+}
+#custom-hyprhelp,
+#custom-firefox,
+#custom-filebrowser {
+	margin: 0px 10px;
+	padding: 0px 5px;
+}
+
+#custom-rofisearch {
+	background: transparent;
+	border-radius: 15px;
+	font-weight: normal;
+	font-style: normal;
+	opacity: 0.8;
+	font-size: 24px;
+	margin: 2px 7px 3px 7px;
+	padding: 0px 10px;
+}

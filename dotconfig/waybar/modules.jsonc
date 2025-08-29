@@ -1,60 +1,81 @@
 {
 
 "hyprland/workspaces": {
-		"format": "{icon}",
+		"on-click": "activate",
+		"active-only": false,
+		"all-outputs": true,
+		"format": "{}",
 		"format-icons": {
-			"active":"<span color='#73daca'></span>",
-			"default":"<span color='#414868'></span>",
-			"empty":"<span color='#414868'></span>"
-			},
+			"urgent": "",
+			"active": "",
+			"default": ""
+						},
 		"persistent-workspaces": {
-			"Virtual-1": [1, 2, 3, 4, 5]
+			"*": 5
 			}
 		},
 
 	"custom/trayic":
 	{
-		"format": "",
+		"format": "<span color='#a9b1d6'></span>",
 		"tooltip":false
 
 	},
 	"tray":
 	{
-		"icon-size": 18,
+	//	"icon-size": 24,
 		"spacing": 10
 	},
 
 	"custom/rofisearch":
 	{
-		"format": "",
+		"format": "<span color='#7dcfff'></span>",
 		"tooltip":false,
 		"on-click":"rofi -disable-history -show drun"
 	},
 	"custom/spotifylogo":
 	{
 	//	"format": "󰓇",
-		"format": "<span color='#c0caf5'>󰝚</span>",
+		"format": "󰝚",
 		"tooltip":false
 	},
 	"custom/pp":
 	{
-		"format": "<span color='#f7768e'>󰐊</span>",
+		"format": "<span color='#cc241d'>󰐊</span>",
 		"tooltip":false,
 		"on-click": "playerctl play-pause"
 	
 	},
 	"custom/prev":
 	{
-		"format": "<span color='#7dcfff'>󰒮</span>",
+		"format": "<span color='#458588'>󰒮</span>",
 		"tooltip":false,
 		"on-click": "playerctl previous"
 	},
 	"custom/next":
 	{
-		"format": "<span color='#73daca'>󰒭</span>",
-		"tooltip":false,
+		"format": "<span color='#d79921'>󰒭</span>",
+		"tooltip": false,
 		"on-click": "playerctl next"
 
+	},
+	"custom/firefox":
+	{
+		"format":"<span color='#a9b1d6'>󰈹</span>",
+		"tooltip": false,
+		"on-click": "firefox"
+	},
+	"custom/filebrowser":
+	{
+		"format":"<span color='#a9b1d6'></span>",
+		"tooltip": false,
+		"on-click": "nemo"
+	},
+	"custom/hyprhelp":
+	{
+		"format":"<span color='#a9b1d6'></span>",
+		"tooltip": false,
+		"on-click": "nemo"
 	},
 	"custom/spotify":
 	{
@@ -65,31 +86,32 @@
 	},
 	"custom/power":
 	{
-		"format": "<span color='#73daca'>⏻</span>",
+		"format": "<span color='#7dcfff'>⏻</span>",
 		"tooltip":false,
 		"on-click": "shutdown now"
 	},
 	"custom/quit":
 	{
-		"format": "<span color='#73daca'>󰗽</span>",
+		"format": "<span color='#821519'>󰗽</span>",
 		"tooltip": false,
 		"on-click": "hyprctl dispatch exit"	
 	},
 	"custom/lock": 
 	{
-		"format": "<span color='#ff768e'></span>",
+		"format": "<span color='#d22d55'></span>",
 		"on-click": "hyprlock",
 		"tooltip": false
 	},
 	"custom/reboot":
 	{
-		"format": "<span color='#7dcfff'></span>",
+		"format": "<span color='#c2b128'></span>",
 		"tooltip": false,
 		"on-click": "reboot"
 	},
 	
 	"pulseaudio":
 	{
+		
 		"format": "{icon}<span color='#73daca'> {volume}</span>",
 		"format-muted": "<span color='#F7DA63'>MUTE</span>",
 		"on-click": "pavucontrol",
@@ -100,15 +122,6 @@
 		}
 	},
 
-	"pulseaudio#alt":
-	{
-		"format": "VOL<span color='#73daca'> {volume}</span>",
-		"format-muted": "<span color='#F7DA63'>MUTE</span>",
-		"on-click": "pavucontrol",
-		"on-click-right":"pactl set-sink-mute @DEFAULT_SINK@ toggle"
-
-	},
-
 	"custom/sep":
 	{
 		"format":"|",
@@ -117,26 +130,57 @@
 	},
 	"network":
 	{	
-
-		"format-wifi": "",
+		"interval": 1,
+		"format-wifi": "<span color='#a9b1d6'></span>",
 		"format-ethernet": "󰈀",
-		"format-disconnected": "<span color='#F7DA63'>  NO CONNECTION</span>",
-		"tooltip-format": "{ipaddr}" 
+		"format-disconnected": "<span color='#d22d55'></span>",
+		"tooltip-format": "{ipaddr} <span color='#d22d55'></span> {bandwidthDownBytes} <span color='#26a0b3'></span> {bandwidthUpBytes}" 
 	},
-	"battery": 
-	{
-		"bat": "BAT0",
-		"interval": 60,
-		"format": "BAT {capacity}%"
-	},
-	"clock#long":
-	{
-		"format":"<span color ='#73daca'> {:%B %d, %Y - %I:%M} </span>",
-		"tooltip-format":"<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
-	},
+	
 	"clock":
 	{
-		"format":"{:%I:%M}",
+		"format":"{:%I:%M %a}",
 		"tooltip-format":"<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
+	},
+
+	"clock#long": 
+	{
+	
+		"format":"<span color='#a9b1d6'> {:%B %d, %Y - %I:%M} </span>",
+		"tooltip-format":"<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
+	},
+	"cpu":
+	{
+		"format": " <span color='#cc241d'> </span>{usage}%",
+		"tooltip": false
+	},
+
+	"memory":
+	{
+		"format": "<span color='#d79921'></span> {}%"
+	},
+
+	"disk":
+	{
+		"path": "/",
+		"interval": 30,
+		"format": "<span color='#98971a'>󰋊</span> {free}",
+		"unit": "GB"
+	},
+
+	"disk#nvme":
+	{
+		"path": "/nvme",
+		"interval": 30,
+		"format": "<span color='#458588'>󰋊</span> {free}",
+		"unit": "GB"
+	},
+
+	"disk#ssd":
+	{
+		"path": "/ssd",
+		"interval": 30,
+		"format": "<span color='#b16286'>󰋊</span> {free}",
+		"unit": "GB"
 	}
 }
