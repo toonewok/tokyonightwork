@@ -21,6 +21,7 @@ mkdir -p ~/.icons
 mkdir -p ~/.themes
 mkdir -p ~/Documents
 cp help ~/Documents
+cp product.conf ~/.sqldeveloper
 cp -R shellscripts ~/
 #this will attempt to determine the display being used and set it accordingly
 #in hyprland.conf and hyprpaper.conf
