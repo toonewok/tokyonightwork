@@ -75,7 +75,7 @@
 	{
 		"format":"<span color='#a9b1d6'></span>",
 		"tooltip": false,
-		"on-click": "nemo"
+		"on-click": "kitty zsh -c 'cat ~/Documents/help; exec zsh'"
 	},
 	"custom/spotify":
 	{
