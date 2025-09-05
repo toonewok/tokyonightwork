@@ -26,7 +26,7 @@ In your home directory there is a hidden folder for sqldeveloper (\~/.sqldevelop
 
 Inside of that folder there is an example product.conf, copy it into the version of sqldeveloper being used
 
-(\~/.sqldeveloper/24.3.1(insert version here)
+(\~/.sqldeveloper/24.3.1(insert version here))
 
 You do not have the nord theme by default, get the gtk theme you want, place it in \~/.themes, use nwg-look/gtk settings to get the name of the theme
 
