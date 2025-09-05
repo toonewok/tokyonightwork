@@ -20,6 +20,8 @@ it will install and reboot when done...and that's it....
 
 
 ## Post Install
+Note - hyprlock setup doesnt have an input bar, type pw and hit enter to login
+
 You can use nwg-look/Gtk settings to change the default theme to Tokyonight for apps and change the default font to jetbrainsmono
 
 In your home directory there is a hidden folder for sqldeveloper (\~/.sqldeveloper)
