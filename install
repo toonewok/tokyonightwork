@@ -20,6 +20,7 @@ mkdir -p ~/Pictures
 mkdir -p ~/.icons
 mkdir -p ~/.themes
 mkdir -p ~/Documents
+mkdir -p ~/.sqldeveloper
 cp help ~/Documents
 cp product.conf ~/.sqldeveloper
 cp -R shellscripts ~/
