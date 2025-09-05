@@ -20,7 +20,7 @@ it will install and reboot when done...and that's it....
 
 
 ## Post Install
-You can use nwg-look/Gtk settings to change the default theme to Tokyonight for apps
+You can use nwg-look/Gtk settings to change the default theme to Tokyonight for apps and change the default font to jetbrainsmono
 
 In your home directory there is a hidden folder for sqldeveloper (\~/.sqldeveloper)
 
