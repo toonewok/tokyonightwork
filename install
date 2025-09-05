@@ -9,7 +9,7 @@ echo Please enter your root/sudo password
 read -s varpw
 #echo \(debug\)Password entered: $varpw
 
-echo "$varpw" | sudo -S pacman -S --noconfirm --needed fastfetch hyprlock hyprpaper nvim rofi nodejs waybar zsh nwg-look firefox nemo pulseaudio pavucontrol ttf-jetbrains-mono-nerd ttf-tinos-nerd kitty python-gobject zip unzip globalprotect-openconnect xclip
+echo "$varpw" | sudo -S pacman -S --noconfirm --needed fastfetch hyprlock hyprpaper nvim rofi nodejs waybar zsh nwg-look firefox nemo pulseaudio pavucontrol ttf-jetbrains-mono-nerd ttf-tinos-nerd kitty python-gobject zip unzip globalprotect-openconnect xclip hyprshot
 
 RUNZSH=no CHSH=no KEEPZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -19,7 +19,9 @@ cp .zshrc ~/
 mkdir -p ~/Pictures
 mkdir -p ~/.icons
 mkdir -p ~/.themes
-
+mkdir -p ~/Documents
+cp help ~/Documents
+cp -R shellscripts ~/
 #this will attempt to determine the display being used and set it accordingly
 #in hyprland.conf and hyprpaper.conf
 monname=$(hyprctl monitors all | sed '1!d' | grep Monitor | cut -d ' ' -f 2)
@@ -33,6 +35,7 @@ sed -i -e "s|Virtual-1|$monname|g" dotconfig/waybar/modules.jsonc
 sed -i -e "s|Virtual-1|$monname|g" dotconfig/hypr/hyprland.conf
 sed -i -e "s|1920x1080|$monres|g" dotconfig/hypr/hyprland.conf
 sed -i -e "s|<user>|$aixuser|g" .zshrc
+sed -i -e "s|<user>|$aixuser|g" shellscripts/scriptdeploy.sh
 sed -i -e "s|<user>|$USER|g" hyprlockgetty
 
 

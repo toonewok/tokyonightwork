@@ -104,6 +104,7 @@ export EDITOR='nvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias help="cat ~/Documents/help"
 alias p="sudo pacman -S"
 alias y="yay -S"
 alias v="nvim"
@@ -113,6 +114,12 @@ alias vh="nvim ~/.config/hypr/hyprland.conf"
 alias dv7="ssh <user>@dv7"
 alias dv7t="ssh ramstst@dv7"
 alias s80="ssh <user>@s80"
-
+alias dv7ftp="sftp <user>@dv7"
+alias s80ftp="sftp <user>@s80"
+alias tstup="~/shellscripts/scriptdeploy.sh ramstst"
+alias devup="~/shellscripts/scriptdeploy.sh ramsdev"
+alias qaup="~/shellscripts/scriptdeploy.sh ramsqa"
+alias prdup="~/shellscripts/scriptdeploy.sh ramsprd"
+alias jesta="~/shellscripts/jesta.sh"
 #uncomment for 420 hacker lord linux flexing XD
 #fastfetch

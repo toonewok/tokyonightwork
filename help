@@ -1,0 +1,39 @@
+  - MODIFIER(SUPER/WINDOWS/CMD by default)
+
+ Hyprland controls
+ -----------------------------
+  + ENTER - opens application launcher
+  + Q - closes active window
+  + T - opens terminal
+  + B - opens web browser
+  + F - opens file manager
+  + any arrow key - moves to active window in direction pressed
+  + any number - moves to that workspace
+  + SHIFT + V - toggles floating window
+  + SHIFT + F - toggles fullscreen
+  + SHIFT + LMB(HOLD) - picks up selected window, release LMB to drop
+  + SHIFT + RMB(HOLD) - resizes selected window, release RMB to stop
+  + SHIFT + S - takes screenshot attaches to clipboard, use gimp to crop
+  + SHIFT + any number - moves active window to workspace of number pressed
+
+ Useful aliases
+ -----------------------------
+ p - sudo pacman -S
+ y - yay -S
+ v - nvim
+ help - shows *this*
+ edit - opens zshrc in nvim
+ vh - opens hyprland config in nvim
+ commit - git commit -a(ll)
+ push - git push
+ dv7,s80 - opens ssh to respective
+ dv7ftp,s80ftp - opens sftp to respective
+ tstup,devup,qaup,prdup - uploads files
+ 			check scriptdeploy in shellscript folder for details
+ jesta - runs the most recent frmservlet from your downloads
+ 	(note - inorder to close you need to close the grey window
+		that opens behind it, use ctrl + c to free up the window
+		might be beneficial to just make a .desktop
+		that calls the script with no terminal)
+
+
