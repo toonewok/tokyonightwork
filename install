@@ -5,11 +5,15 @@
 #
 echo Please enter your AIX username
 read aixuser
+echo Please enter your LDAP user
+read ldapuser
+echo Please enter your LDAP password
+read -s ldappw
 echo Please enter your root/sudo password
 read -s varpw
 #echo \(debug\)Password entered: $varpw
 
-echo "$varpw" | sudo -S pacman -S --noconfirm --needed fastfetch hyprlock hyprpaper nvim rofi nodejs waybar zsh nwg-look firefox nemo pulseaudio pavucontrol ttf-jetbrains-mono-nerd ttf-tinos-nerd kitty python-gobject zip unzip globalprotect-openconnect xclip hyprshot
+echo "$varpw" | sudo -S pacman -S --noconfirm --needed fastfetch hyprlock hyprpaper nvim rofi nodejs waybar zsh nwg-look firefox nemo pulseaudio pavucontrol ttf-jetbrains-mono-nerd ttf-tinos-nerd kitty python-gobject zip unzip globalprotect-openconnect xclip hyprshot gimp java17-openjdk qalculate-gtk tree
 
 RUNZSH=no CHSH=no KEEPZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -39,6 +43,8 @@ sed -i -e "s|1920x1080|$monres|g" dotconfig/hypr/hyprland.conf
 sed -i -e "s|<user>|$aixuser|g" ~/.zshrc
 sed -i -e "s|<user>|$aixuser|g" ~/shellscripts/scriptdeploy.sh
 sed -i -e "s|<user>|$USER|g" hyprlockgetty
+sed -i -e "s|<user>|$ldapuser" shellscripts/gpc.sh
+echo $ldappw > ~/tokyonightwork/dotconfig/openconnect/pass
 
 
 

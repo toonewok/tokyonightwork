@@ -22,13 +22,13 @@ it will install and reboot when done...and that's it....
 ## Post Install
 Note - hyprlock setup doesnt have an input bar, type pw and hit enter to login
 
-You'll need to get the globalprotect info off your laptop
+Pressing SUPER+G will open a unique workspace that will log you into the VPN provided your credentials are correct(the one's entered at install)
 
 You can use nwg-look/Gtk settings to change the default theme to Tokyonight for apps and change the default font to jetbrainsmono
 
 In your home directory there is a hidden folder for sqldeveloper (\~/.sqldeveloper)
 
-Inside of that folder there is an example product.conf, copy it into the version of sqldeveloper being used
+Inside of that folder there is an example product.conf, copy it into the version of sqldeveloper being used. This is required to point to the correct version of java for sqldeveloper to work
 
 (\~/.sqldeveloper/24.3.1(insert version here))
 
